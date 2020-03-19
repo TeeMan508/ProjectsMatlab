@@ -15,6 +15,11 @@
   
   subplot(1,3,2);
   h1=animatedline(0,0,'Color','b');
+  axis([0.1 5 0 1000]);
+  
+  subplot(1,3,3);
+  h2=animatedline(0,0,'linestyle','none', 'marker','.','Color','r');
+  axis([0.1 1 0 2.5]);
   
 while ishandle(h) 
     i=i+1;
@@ -39,11 +44,8 @@ while ishandle(h)
     [x1,y1]=stairs(n, rkb);
     clearpoints(h1);
     addpoints(h1,y1,x1);
-    axis([0.1 5 0 1000]);
     drawnow;
  
-    subplot(1,3,3);
-    h2=animatedline(0,0','linestyle','none', 'marker','.','Color','r');
     f=exp(-r.^2/(2*i*aa))/(sqrt(2*3.14159265358*i*aa));
     clearpoints(h2);
     addpoints(h2,r,f);
