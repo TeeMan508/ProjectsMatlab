@@ -2,7 +2,7 @@
   m =500;
   i=1;
   dh=0.01;
-  aa=(dh^2)/3;
+  aa=sqrt(2)*(dh^2)/3;
   x=zeros(1,m);
   y=zeros(1,m);
   S=(1--0)*500/42;
@@ -15,11 +15,11 @@
   
   subplot(1,3,2);
   h1=animatedline(0,0,'Color','b');
-  axis([0.1 5 0 1000]);
+  axis([0.1 5 0 10000]);
   
   subplot(1,3,3);
   h2=animatedline(0,0,'linestyle','none', 'marker','.','Color','r');
-  axis([0.1 1 0 2.5]);
+  axis([0.1 5 0 10000]);
   
 while ishandle(h) 
     i=i+1;
@@ -46,7 +46,8 @@ while ishandle(h)
     addpoints(h1,y1,x1);
     drawnow;
  
-    f=exp(-r.^2/(2*i*aa))/(sqrt(2*3.14159265358*i*aa));
+    f=2500*exp(-r.^2/(2*i*aa))/(sqrt(2*3.14159265358*i*aa));
+    %disp(f);
     clearpoints(h2);
     addpoints(h2,r,f);
     drawnow;
