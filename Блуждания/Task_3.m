@@ -1,7 +1,7 @@
   clear;
   m =500;
   i=1;
-  dh=0.01;
+  dh=0.1;
   y=1:m;
   x=zeros(size(y));
   args=(1:1:5001);
@@ -26,8 +26,8 @@ while ishandle(h)
     drawnow; 
     
     x1=x;
-    xs=sum(x1);
-    xs2=sum(x1.^2);
+    xs=sum(x1)/length(x);
+    xs2=sum(x1.^2)/length(x);
     XS(i)=xs;
     XS2(i)=xs2;
     addpoints(h1,i,xs);
