@@ -1,7 +1,7 @@
   clear;
   m =500;
   i=1;
-  dh=0.01;
+  dh=0.1;
   aa=sqrt(2)*(dh^2)/3;
   x=zeros(1,m);
   y=zeros(1,m);
@@ -15,7 +15,7 @@
   
   subplot(1,3,2);
   h1=animatedline(0,0,'Color','b');
-  axis([0.1 5 0 10000]);
+  axis([0.1 5 0 m/2]);
   
   subplot(1,3,3);
   h2=animatedline(0,0,'linestyle','none', 'marker','.','Color','r');
