@@ -3,7 +3,7 @@ global rad lx ly m n;
 j=0;
 n=10;
 dt=0.3; 
-tmax=20000.0; 
+tmax=200.0; 
 tmot=0; 
 lx=100; ly=100; 
 rad(1:n)=5;
@@ -34,7 +34,7 @@ while (tmot<tmax)
     h1=animatedline(x(1),y(1));   
     set(h1,'color',clr); 
     if clr=="g"
-       set(gcf,'ButtonDownFcn','vx=-vx; vy=-vy; clr="b";'); 
+       set(gcf,'ButtonDownFcn','vx=-vx; vy=-vy; clr="r";'); 
     else
        set(gcf,'ButtonDownFcn','vx=-vx; vy=-vy; clr="g";'); 
     end
