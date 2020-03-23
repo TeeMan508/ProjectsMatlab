@@ -17,11 +17,11 @@
   h1=animatedline(0,0,'Color','b');
   axis([0.1 5 0 m/2]);
   
-  subplot(1,3,3);
+  subplot(1,3,2);
   h2=animatedline(0,0,'linestyle','none', 'marker','.','Color','r');
   axis([0.1 5 0 10000]);
   
-while ishandle(h) 
+while isvalid(h) 
     i=i+1;
     x=x+dh*(2*rand(1,m)-1);
     y=y+dh*(2*rand(1,m)-1);
@@ -46,15 +46,9 @@ while ishandle(h)
     addpoints(h1,y1,x1);
     drawnow;
  
-    f=2500*exp(-r.^2/(2*i*aa))/(sqrt(2*3.14159265358*i*aa));
+    f=S*r.*exp(-r.^2/(2*i*aa))/(sqrt(2*3.14159265358*i*aa));
     %disp(f);
     clearpoints(h2);
     addpoints(h2,r,f);
     drawnow;
-    
-    
-    
-    
-    
-    
 end

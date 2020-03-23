@@ -8,14 +8,18 @@
   XS=zeros(1,length(args));
   XS2=zeros(1,length(args));
 
-  subplot(2,1,1);
+  subplot(3,1,1);
   h=animatedline(x,y,'linestyle','none', 'marker','.','markersize',4,'markerFaceColor','r'); 
   axis([-2 2 0 m+1 ]);
   
-  subplot(2,1,2);
+  subplot(3,1,2);
   h1=animatedline(0,0,'Color','Blue');
+  %axis([0 length(args) -20 20])
+  grid on;
+  
+  subplot(3,1,3);
   h2=animatedline(0,0,'Color','Green');
-  axis([0 length(args) -50 50])
+  %axis([0 length(args) -5 5]);
   grid on;
   
 while ishandle(h) 

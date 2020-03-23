@@ -1,19 +1,16 @@
-  m =500;
+  m =5000;
   i=0;
-  dh=0.01;
+  dh=0.053;
   y=1:m; 
   y=y';  
   x=zeros(size(y));
   aa=(dh^2)/3;
-  S=(1--1)*500/20;
+  S=(1--1)*m/20;
 
   subplot(1,2,1);
   h=animatedline(x,y,'linestyle','none', 'marker','.','markersize',4,'markerFaceColor','r'); 
   axis([-2 2 0 m+1 ]);
-  
-  
-  
-  
+    
 while ishandle(h) 
     i=i+1;
     x=x+dh*(2*rand(m,1)-1); 
@@ -25,7 +22,7 @@ while ishandle(h)
     subplot(1,2,2);
     edges=-1:0.1:1;
     h1=histogram(x, edges);
-    axis([-1 1 0 250]);
+    axis([-1 1 0 m]);
     drawnow;
     
     subplot(1,2,2);
