@@ -1,4 +1,4 @@
-clear; %tm порядка 50 секунд
+clear all; %tm порядка 50 секунд
 global rad lx ly m n;
 j=0;
 n=10;

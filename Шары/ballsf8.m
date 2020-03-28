@@ -1,4 +1,4 @@
-function [x,y,vx,vy]=ballsf8(n,x,y,vx,vy,dt);
+function [x,y,vx,vy]=ballsf8(n,x,y,vx,vy,dt)
 global rad lx ly m;    % Радиусы и массы шаров и размеры стола.
 r=[x; y]; 
 v=[vx; vy];    % Образуем матрицы координат и скоростей
