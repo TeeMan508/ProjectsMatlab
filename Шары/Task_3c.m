@@ -30,7 +30,7 @@ axis('square');
 subplot(1,2,2);
 he=animatedline(0,0,'Color','Blue');
 he_teor=animatedline(0,0,'Color','r','LineStyle','none','Marker','.');
-axis([0 14000 0 50]);
+axis([0 14000 0 10]);
 grid on;
 
 while (tmot<tmax)
@@ -54,7 +54,7 @@ while (tmot<tmax)
     drawnow; 
     
     subplot(1,2,2);
-    [ne, edges]=hist((vx.^2+vy.^2)/2);
+    [ne, edges]=hist((vx.^2+vy.^2)/2,100);
     [x1, y1]= stairs(ne, edges);
     clearpoints(he);
     addpoints(he,y1,x1);

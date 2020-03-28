@@ -53,14 +53,15 @@ while (tmot<tmax)
     drawnow; 
     
     subplot(1,2,2);
-    [nvx, edges]=hist(vx);
+    [nvx, edges]=hist(vx,100);
     [x1, y1]= stairs(nvx, edges);
     clearpoints(hvx);
     addpoints(hvx,y1,x1);
     drawnow;
     
     S=(200--200)*n/length(edges);
-    f=S*(n-1)*exp((n-2)*(-vx.^2/2)/E)/(E*2*pi)*200;
+    %f=S*(n-1)*exp((n-2)*(-vx.^2/2)/E)/(E*2*pi)*200;
+    f=1/100/3.3*(n-1)*exp((n-2)*(-vx.^2/2)/E)/(E*2*pi).*nvx;
     clearpoints(hvx_teor);
     addpoints(hvx_teor,vx,f);
     drawnow;

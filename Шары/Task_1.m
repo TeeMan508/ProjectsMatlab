@@ -1,12 +1,12 @@
 clear all; %tm порядка 50 секунд
 global rad lx ly m n;
 j=0;
-n=10;
-dt=0.3; 
-tmax=200.0; 
+n=100;
+dt=0.2; 
+tmax=2000.0; 
 tmot=0; 
 lx=100; ly=100; 
-rad(1:n)=5;
+rad(1:n)=0.5;
 m(1:n)=1; 
 out=set_random(n);
 x=out(1,:);
