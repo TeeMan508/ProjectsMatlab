@@ -13,6 +13,8 @@ x=out(1,:);
 y=out(2,:); 
 vx=out(3,:);
 vy=out(4,:);
+E=n*100^2/2;
+
 
 subplot(1,2,1);
 sttext=['t=',num2str(0.00),'sec']; 
@@ -27,6 +29,7 @@ axis('square');
 
 subplot(1,2,2);
 hv=animatedline(0,0,'Color','Blue');
+hv_teor=animatedline(0,0,'Color','r','LineStyle','none','Marker','.');
 axis([0 200 0 40]);
 grid on;
 
@@ -50,11 +53,18 @@ while (tmot<tmax)
     addpoints(h1,x(1),y(1));
     drawnow; 
     
+    
     subplot(1,2,2);
     [nv, edges]=hist(sqrt(vx.^2+vy.^2));
     [x1, y1]= stairs(nv, edges);
     clearpoints(hv);
     addpoints(hv,y1,x1);
+    drawnow;
+    
+    S=(200--0)*n/length(edges);
+    f=S*(n-1)*exp((n-2)*(-vx.^2-vy.^2/2)/E)/(E*2*pi)*350;
+    clearpoints(hv_teor);
+    addpoints(hv_teor,sqrt(vx.^2+vy.^2),f);
     drawnow;
     
 end
